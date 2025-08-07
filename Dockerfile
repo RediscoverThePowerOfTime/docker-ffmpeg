@@ -114,4 +114,4 @@ COPY --from=build /opt/ffmpeg /opt/ffmpeg
 COPY --from=build /usr/lib/libfdk-aac.so.2 /usr/lib/libfdk-aac.so.2
 COPY --from=build /usr/lib/librav1e.so /usr/lib/librav1e.so
 
-CMD ["/usr/local/bin/ffmpeg"]
+CMD ["/usr/sbin/sshd", "-D"]
