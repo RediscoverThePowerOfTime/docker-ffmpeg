@@ -1,6 +1,14 @@
 ###############################
 # Build the FFmpeg-build image.
 FROM alpine:3.16.0 as build
+RUN apk update && apk add --no-cache openssh \
+  && ssh-keygen -A
+
+RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd", "-D"]
 
 ARG FFMPEG_VERSION=5.0
 
