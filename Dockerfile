@@ -1,4 +1,11 @@
 FROM ubuntu:22.04
+FROM ubuntu:22.04
+
+# Cache buster - Force rebuild Aug 8 2025 v1
+ENV REBUILD_DATE="2025-08-08-v1"
+
+# Avoid interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Avoid interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
